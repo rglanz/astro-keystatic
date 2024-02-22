@@ -2,7 +2,10 @@ import { config, fields, singleton } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
+    kind: "cloud",
+  },
+  cloud: {
+    project: "cedar-studios/astro-keystatic",
   },
 
   singletons: {
