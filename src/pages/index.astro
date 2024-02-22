@@ -1,0 +1,25 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const post = await getEntry("post", "index");
+const { Content } = await post.render();
+---
+
+<Layout title="Keystatic & Astro's Content Collections">
+  <div>
+    <h1>Keystatic ⚡️ + Astro 🚀</h1>
+    <p>
+      This homepage shows how to load data from Astro's content collections.
+    </p>
+    <p>
+      <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
+      below to view a post in the collection.
+    </p>
+    <h2>Posts</h2>
+    <ul>
+      <h3>{post.data.title}</h3>
+      <Content />
+    </ul>
+  </div>
+</Layout>
